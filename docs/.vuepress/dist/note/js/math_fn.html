@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用的Math数学对象函数 | AME_BLOG</title>
+    <meta name="description" content="Math">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.7a2ad57b.css" as="style"><link rel="preload" href="/assets/js/app.60ce1d25.js" as="script"><link rel="preload" href="/assets/js/3.b2331f66.js" as="script"><link rel="preload" href="/assets/js/22.762e605b.js" as="script"><link rel="prefetch" href="/assets/js/1.96f3f0fb.js"><link rel="prefetch" href="/assets/js/10.769cada3.js"><link rel="prefetch" href="/assets/js/11.a50d5f49.js"><link rel="prefetch" href="/assets/js/12.f379d991.js"><link rel="prefetch" href="/assets/js/13.5af28ca4.js"><link rel="prefetch" href="/assets/js/14.29b1ff2e.js"><link rel="prefetch" href="/assets/js/15.a61fb83e.js"><link rel="prefetch" href="/assets/js/16.0064d143.js"><link rel="prefetch" href="/assets/js/17.570f6c42.js"><link rel="prefetch" href="/assets/js/18.cd5255f6.js"><link rel="prefetch" href="/assets/js/19.0598ee7a.js"><link rel="prefetch" href="/assets/js/20.b827a594.js"><link rel="prefetch" href="/assets/js/21.22431cb8.js"><link rel="prefetch" href="/assets/js/23.c526d1c0.js"><link rel="prefetch" href="/assets/js/24.b4133753.js"><link rel="prefetch" href="/assets/js/4.ad855f47.js"><link rel="prefetch" href="/assets/js/5.08321ba4.js"><link rel="prefetch" href="/assets/js/6.3e6521f4.js"><link rel="prefetch" href="/assets/js/7.251fc9fd.js"><link rel="prefetch" href="/assets/js/8.4dc0718b.js"><link rel="prefetch" href="/assets/js/9.e21b00f8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7a2ad57b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">AME_BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/note/" class="nav-link router-link-active">笔记</a></div><div class="nav-item"><a href="/intro/" class="nav-link">介绍</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/note/" class="nav-link router-link-active">笔记</a></div><div class="nav-item"><a href="/intro/" class="nav-link">介绍</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note/css/ellipsis.html" class="sidebar-link">文本溢出显示省略号</a></li><li><a href="/note/css/vertical.html" class="sidebar-link">居中对齐</a></li><li><a href="/note/css/background-clip.html" class="sidebar-link">css background-clip属性</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note/js/f11_fullscreen.html" class="sidebar-link">F11效果浏览器窗口全屏</a></li><li><a href="/note/js/window_location.html" class="sidebar-link">window.location对象</a></li><li><a href="/note/js/design_mode.html" class="sidebar-link">设计模式</a></li><li><a href="/note/js/math_fn.html" class="active sidebar-link">常用的Math数学对象函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#普通取值运算" class="sidebar-link">普通取值运算</a></li><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#取最运算" class="sidebar-link">取最运算</a></li><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#次方运算" class="sidebar-link">次方运算</a></li><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#中学数学函数" class="sidebar-link">中学数学函数</a></li><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#其他运算" class="sidebar-link">其他运算</a></li><li class="sidebar-sub-header"><a href="/note/js/math_fn.html#math对象属性" class="sidebar-link">Math对象属性</a></li></ul></li><li><a href="/note/js/ES6_GeneratorFunction_yeild_promise.html" class="sidebar-link">ES6 function* , yeild, Promise</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Node</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note/node/unexpected_token_import.html" class="sidebar-link">编译报错Unexpected token import</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Git</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note/git/git_error.html" class="sidebar-link">git 报错</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="常用的math数学对象函数"><a href="#常用的math数学对象函数" aria-hidden="true" class="header-anchor">#</a> 常用的Math数学对象函数</h1> <h2 id="普通取值运算"><a href="#普通取值运算" aria-hidden="true" class="header-anchor">#</a> 普通取值运算</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>abs(x) 返回正数和负数的绝对值。如：Math.abs(-81) = 81
+ceil(x) 对数进行上舍入。如：Math.ceil(3.15) = 4
+floor(x) 对数进行下舍入。如：Math.floor(3.95) = 3
+round(x) 把数四舍五入为最接近的整数。如：Math.round(3.55) = 3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="取最运算"><a href="#取最运算" aria-hidden="true" class="header-anchor">#</a> 取最运算</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>random() 返回 0 ~ 1 之间的随机数。
+max(x,y) 返回 x 和 y 中的最高值。
+min(x,y) 返回 x 和 y 中的最低值。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="次方运算"><a href="#次方运算" aria-hidden="true" class="header-anchor">#</a> 次方运算</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>pow(x,y) 返回 x 的 y 次幂。如：Math.pow(3,3) = 27
+sqrt(x) 返回数的平方根。如：Math.sqrt(81) = 9
+cbrt(x) 返回数的立方根。如：Math.cbrt(27) = 3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="中学数学函数"><a href="#中学数学函数" aria-hidden="true" class="header-anchor">#</a> 中学数学函数</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>sin(x) 返回数的正弦。
+cos(x) 返回数的余弦。
+tan(x) 返回角的正切。
+asin(x) 返回数的反正弦值。
+acos(x) 返回数的反余弦值。
+atan(x) 以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。
+atan2(y,x) 返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="其他运算"><a href="#其他运算" aria-hidden="true" class="header-anchor">#</a> 其他运算</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>imul(x, y) ：返回x(被乘数)*y(乘数)的运算结果
+exp(x) 返回Math.E的x次方
+expm1(x) 返回Math.E的x次方 - 1
+hypot(value1, value2, ...) 函数返回它的所有参数的平方和的平方根
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="math对象属性"><a href="#math对象属性" aria-hidden="true" class="header-anchor">#</a> Math对象属性</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>E: 2.718281828459045 返回常数e
+LN2: 0.6931471805599453 返回2的自然对数
+LN10: 2.302585092994046 返回10的自然对数
+LOG2E: 1.4426950408889634 返回以2为底e的对数
+LOG10E: 0.4342944819032518 返回以10为底e的对数
+PI: 3.141592653589793 返回圆周率
+SQRT1_2: 0.7071067811865476 返回1/2的平方根
+SQRT2: 1.4142135623730951 返回2的平方根
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="tip custom-block"><p class="custom-block-title">注：</p> <p>不管是Math对象属性，还是Math对象方法函数，都需要通过 Math. 来使用，如：Math.PI</p></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/note/js/design_mode.html" class="prev">
+          设计模式
+        </a></span> <span class="next"><a href="/note/js/ES6_GeneratorFunction_yeild_promise.html">
+          ES6 function* , yeild, Promise
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.60ce1d25.js" defer></script><script src="/assets/js/3.b2331f66.js" defer></script><script src="/assets/js/22.762e605b.js" defer></script>
+  </body>
+</html>
