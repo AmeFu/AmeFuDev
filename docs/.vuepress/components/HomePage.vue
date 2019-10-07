@@ -33,7 +33,7 @@
     },
     mounted() {
       this.getHitoKoto()
-      this.getBg()
+      // this.getBg()
     },
     methods: {
       getHitoKoto() {
@@ -49,7 +49,7 @@
         })
       }
     }
-  };
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -160,6 +160,7 @@
             border-bottom: 2px solid #3eaf7c;
             cursor: pointer;
             text-shadow: 0 0 5px #fff;
+            outline: none;
 
             &::before
             &::after {

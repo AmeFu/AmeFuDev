@@ -18,3 +18,7 @@ $ git stash pop // 合并暂存的代码
 $git reset --hard // 回滚到上一个版本
 $git pull origin master
 ```
+
+## remote: Enumerating objects
+
+网速问题，更换网络尝试

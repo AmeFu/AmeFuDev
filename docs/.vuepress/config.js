@@ -1,4 +1,3 @@
-// import configuration from './public/resouce/configuration.json'
 var configuration = require("./public/resource/configuration.json")
 
 module.exports = {
