@@ -6,12 +6,10 @@
       <SearchBox class="search-box" v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
     </div>
     <Stars class="stars" />
-    <!-- <PointLine class="pointLine" /> -->
   </div>
 </template>
 <script>
 import SearchBox from '@theme/components/SearchBox'
-// import PointLine from '@theme/components/bg/PointLine'
 import Stars from '@theme/components/bg/Stars'
 const axios = require('axios')
 export default {
