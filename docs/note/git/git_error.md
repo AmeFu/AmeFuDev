@@ -1,9 +1,10 @@
 ---
-tags: git, background, 前端
+title: git 报错信息
+tags: git
 description: git
 ---
 
-# git 报错
+<!-- # git 报错 -->
 
 ## error：Your local changes to the following files would be overwritten by merge
 

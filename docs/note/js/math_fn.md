@@ -1,4 +1,5 @@
 ---
+title: Math对象
 tags: js, 前端
 description: Math
 ---

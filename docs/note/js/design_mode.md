@@ -1,9 +1,10 @@
 ---
+title: 设计模式
 tags: js, 前端
 description: design mode
 ---
 
-# 设计模式
+<!-- # 设计模式 -->
 
 <style>
     span.markText {

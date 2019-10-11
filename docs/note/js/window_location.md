@@ -1,9 +1,10 @@
 ---
+title: window.location对象
 tags: js, 前端
 description: window.location
 ---
 
-# window.location对象
+<!-- # window.location对象 -->
 
 window.location 对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面。
 

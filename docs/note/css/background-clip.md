@@ -1,9 +1,10 @@
 ---
+title: background-clip的作用
 tags: css, 前端
 description: 本文介绍了background-clip在不同值下的现象
 ---
 
-# css background-clip属性
+<!-- # css background-clip属性 -->
 
 <style>
     p.bg-clip {

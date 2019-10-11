@@ -1,9 +1,10 @@
 ---
-tags: node, 前端
-description: Unexpected token import
+title: 编译报错Unexpected token import
+tags: node
+description: 编译报错Unexpected token import
 ---
 
-# 编译报错Unexpected token import
+<!-- # 编译报错Unexpected token import -->
 
 NodeJS和Web只支持部分ES6语法
 

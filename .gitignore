@@ -1,2 +1,4 @@
 node_modules/
 docs/.vuepress/dist
+deploy.sh
+**_bak

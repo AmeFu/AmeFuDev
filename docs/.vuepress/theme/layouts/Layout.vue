@@ -1,148 +1,99 @@
 <template>
-  <div
-    class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
-
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    ></div>
-
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
-      <slot
-        name="sidebar-top"
-        slot="top"
-      />
-      <slot
-        name="sidebar-bottom"
-        slot="bottom"
-      />
-    </Sidebar>
-
-    <Home v-if="$page.frontmatter.home"/>
-
-    <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
-      <slot
-        name="page-top"
-        slot="top"
-      />
-      <slot
-        name="page-bottom"
-        slot="bottom"
-      />
-    </Page>
+  <div class="theme-container" :class="pageClasses">
+    <!-- <PointBg class="pointBg" /> -->
+    <Navbar @toggle-menu="toggleMenu" />
+    <Slogan />
+    <div class="content-wrap">
+      <div class="inner-block">
+        <div class="left-side">
+          <Home v-if="$page.frontmatter.home"/>
+          <Note v-else-if="$page.frontmatter.note"/>
+          <Page v-else>
+            <slot name="page-top" slot="top"/>
+            <slot name="page-bottom" slot="bottom"/>
+          </Page>
+        </div>
+        <aside class="right-side" v-if="!$page.frontmatter.home && !$page.frontmatter.intro && (Object.keys($categorys).length > 0 || Object.keys($tags).length > 0)">
+          <Category v-if="Object.keys($categorys).length > 0" />
+          <Tag v-if="Object.keys($tags).length > 0" />
+          <RouterSidebar />
+        </aside>
+      </div>
+    </div>
+    <Footerbar v-if="!$page.frontmatter.home" />
   </div>
 </template>
 
 <script>
-import Home from '@vuepress/theme-default/components/Home.vue'
-import Navbar from '@vuepress/theme-default/components/Navbar.vue'
-import Page from '@vuepress/theme-default/components/Page.vue'
-import Sidebar from '@vuepress/theme-default/components/Sidebar.vue'
-import { resolveSidebarItems } from '@vuepress/theme-default/util'
+import Home from '@theme/components/HomePage.vue'
+import Note from '@theme/components/NoteList.vue'
+import Navbar from '@theme/components/Navbar.vue'
+import Page from '@theme/components/Page.vue'
+import Footerbar from '@theme/components/Footerbar.vue'
+import Category from '@theme/components/Category.vue'
+import Tag from '@theme/components/Tag.vue'
+import RouterSidebar from '@theme/components/RouterSidebar.vue'
+import Slogan from '@theme/components/Slogan.vue'
+import PointBg from '@theme/components/bg/Point.vue'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar },
-
+  components: { Home, Note, Page, Navbar, Footerbar, Category, Tag, RouterSidebar, Slogan, PointBg },
   data () {
     return {
-      isSidebarOpen: false
+      isMenuOpen: false
     }
   },
-
   computed: {
-    shouldShowNavbar () {
-      const { themeConfig } = this.$site
-      const { frontmatter } = this.$page
-      if (
-        frontmatter.navbar === false
-        || themeConfig.navbar === false) {
-        return false
-      }
-      return (
-        this.$title
-        || themeConfig.logo
-        || themeConfig.repo
-        || themeConfig.nav
-        || this.$themeLocaleConfig.nav
-      )
-    },
-
-    shouldShowSidebar () {
-      const { frontmatter } = this.$page
-      return (
-        !frontmatter.home
-        && frontmatter.sidebar !== false
-        && this.sidebarItems.length
-      )
-    },
-
-    sidebarItems () {
-      return resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
-      )
-    },
-
     pageClasses () {
       const userPageClass = this.$page.frontmatter.pageClass
       return [
         {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          'menu-open': this.isMenuOpen
         },
         userPageClass
       ]
     }
   },
-
   mounted () {
     this.$router.afterEach(() => {
-      this.isSidebarOpen = false
+      this.isMenuOpen = false
     })
   },
-
   methods: {
-    toggleSidebar (to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-      this.$emit('toggle-sidebar', this.isSidebarOpen)
-    },
-
-    // side swipe
-    onTouchStart (e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      }
-    },
-
-    onTouchEnd (e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x
-      const dy = e.changedTouches[0].clientY - this.touchStart.y
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        if (dx > 0 && this.touchStart.x <= 80) {
-          this.toggleSidebar(true)
-        } else {
-          this.toggleSidebar(false)
-        }
-      }
+    toggleMenu (to) {
+      this.isMenuOpen = typeof to === 'boolean' ? to : !this.isMenuOpen
     }
   }
 }
 </script>
+<style lang="stylus" scoped>
+@import '../styles/config.styl'
+
+.theme-container
+  position relative
+  padding-top 31px
+  padding-bottom 50px
+  min-height 100vh
+  .content-wrap
+    .inner-block
+      position relative
+      display flex
+      padding-top 20px
+      justify-content space-between
+      .left-side
+        width $contentWidth
+      .right-side
+        width $themeContainerWidth - $contentWidth - 100px
+
+@media (max-width: $MQMobile)
+  .theme-container
+    .content-wrap
+      .inner-block
+        padding: 20px 10px 0
+        .left-side
+          width: 100%;
+        .right-side
+          display: none
+</style>
+
+<style src="prismjs/themes/prism-tomorrow.css"></style>

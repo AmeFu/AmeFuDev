@@ -1,0 +1,147 @@
+@require './code'
+@require './custom-blocks'
+@require './arrow'
+@require './toc'
+@require './config'
+
+*
+  margin 0
+  padding 0
+  box-sizing: border-box;
+
+html
+  font-size 14px
+
+body
+  // font-family "Droid Serif",Georgia,"Times New Roman",STHeiti,serif
+  // -webkit-font-smoothing antialiased
+  // -moz-osx-font-smoothing grayscale
+  font-size 14px
+  line-height 1.5
+  letter-spacing 1px
+  word-spacing 1px
+  color $textColor
+
+.navbar
+  // background-color $bgColor
+  // border-bottom 1px solid $borderColor
+
+.inner-block
+  width $themeContainerWidth
+  margin 0 auto
+
+@media (max-width: $MQMobile)
+  .inner-block
+    width 100%
+
+.content
+  // text-align justify
+  line-height: 1.8
+  h1, h2, h3, h4, h5, h6
+    margin-top 1.1rem
+    margin-bottom 0.9rem
+    &:hover .header-anchor
+      opacity: 1
+  p, ul, ol
+    margin-top: 0.7rem
+    margin-bottom 0.7rem
+
+  ul, ol
+    ul, ol
+      margin-bottom 0
+  a
+    border-bottom 1px dashed #ddd
+    &:hover
+      text-decoration underline
+  p.demo
+    padding 1rem 1.5rem
+    border 1px solid #ddd
+    border-radius 4px
+  img
+    margin-top 10px
+    max-width 100%
+    border-radius 4px
+    border 1px solid #eee
+
+a
+  font-weight 500
+  color $accentColor
+  text-decoration none
+  &:hover
+    text-decoration: underline;
+
+p a code
+  font-weight 400
+  color $accentColor
+
+kbd
+  background #eee
+  border solid 0.15rem #ddd
+  border-bottom solid 0.25rem #ddd
+  border-radius 0.15rem
+  padding 0 0.15em
+
+blockquote
+  font-size .9rem
+  color #999
+  border-left .5rem solid #dfe2e5
+  margin 0.5rem 0
+  padding .25rem 0 .25rem 1rem
+  & > p
+    margin 0
+
+ul, ol
+  padding-left 1.2em
+
+strong
+  font-weight 600
+
+h1
+  font-size 1.6rem
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+h2
+  font-size 1.3rem
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+h3
+  font-size 1.2rem
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+h4
+  font-size: 1.2rem
+  font-weight normal
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+  &:hover
+    text-decoration none
+
+code, kbd, .line-number
+  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+hr
+  border 0
+  border-top 1px solid $borderColor
+
+table
+  border-collapse collapse
+  margin 1rem 0
+  display: block
+  overflow-x: auto
+
+tr
+  border-top 1px solid #dfe2e5
+  &:nth-child(2n)
+    background-color #f6f8fa
+
+th, td
+  border 1px solid #dfe2e5
+  padding .6em 1em
+
+@require 'mobile.styl'

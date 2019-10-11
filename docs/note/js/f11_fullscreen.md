@@ -1,4 +1,5 @@
 ---
+title: 网页全屏
 tags: js, 前端
 description: fullscreen
 ---

@@ -1,5 +1,5 @@
 <template>
-    <div class="fullScreen">
+    <div class="fullScreen homePage">
         <div class="enter-wrap">
             <span class="img-wrap">
                 <img src="https://unsplash.it/200/200" alt="">
@@ -9,9 +9,7 @@
                 <span class="text">{{hitokoto}}{{from}}</span>
                 <span class="change" @click="getHitoKoto" title="Hitokoto-一言">换一换</span>
             </p>
-            <a href="./note">
-                <button class="enter">进入</button>
-            </a>
+            <a href="./note" class="enter">进入</a>
         </div>
     </div>
 </template>
@@ -38,7 +36,6 @@
     methods: {
       getHitoKoto() {
         axios.get('https://v1.hitokoto.cn/').then((res) => {
-            console.log(res)
             this.hitokoto = res.data.hitokoto
             this.from = res.data && res.data.from ? ' —— ' + res.data.from : ''
         })
@@ -53,6 +50,13 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+    .homePage {
+        color rgba(255,255,255,0.65)
+        background-color $bgDark
+        background-image url("/img/star-bg.svg"),linear-gradient(#191c20, #24292e 15%)
+        background-repeat repeat-x
+        background-position center 0, 0 0, 0 0
+    }
     *::selection {
         background #3eaf7c
         color #fff
@@ -62,8 +66,8 @@
         color #fff
     }
     .fullScreen {
-        background #fff url("https://acg.toubiec.cn/random.php") no-repeat center
-        background-size cover
+        // background #fff url("https://acg.toubiec.cn/random.php") no-repeat center
+        // background-size cover
         width 100vw
         height: 100vh
         position fixed
@@ -94,13 +98,12 @@
         z-index 10
         .HitoKoto {
             position relative
-            background rgba(255, 255, 255, .5)
             padding .5rem
             padding-top 1.35rem
             margin 4rem
             border-radius 0.625rem
             .text {
-
+                color #fff
             }
             .change {
                 border-radius 0.625rem
@@ -147,109 +150,8 @@
                 object-fit cover
             }
         }
-        button {
-            position: relative;
-            background: transparent;
-            border-color: transparent;
-            width: 100px;
-            height: 50px;
-            color: #3eaf7c;
-            font-size: 40px;
-            text-align: center;
-            margin: 100px auto;
-            border-bottom: 2px solid #3eaf7c;
-            cursor: pointer;
-            text-shadow: 0 0 5px #fff;
-            outline: none;
-
-            &::before
-            &::after {
-                position: absolute;
-                content: "";
-                left: 50%;
-            }
-
-            &::before {
-                width: 5px;
-                height: 30px;
-                background: #3eaf7c;
-                bottom: 50px;
-                transform: translateX(-50%);
-                animation: jump1 1s linear infinite;
-            }
-            &::after {
-                width: 15px;
-                height: 15px;
-                border-bottom: 5px solid #3eaf7c;
-                border-right: 5px solid #3eaf7c;
-                bottom: 40px;
-                transform: rotate(45deg) translateX(calc(-50% - 4px));
-                animation: jump2 1s linear infinite;
-            }
-
-            &:hover {
-                transform: skewY(5deg);
-                &::before,
-                &::after {
-                    position: absolute;
-                    content: "";
-                    width: 4px;
-                    height: 6px;
-                    border: none;
-                    border-radius: 50%;
-                    background: #3eaf7c;
-                    bottom : -6px;
-                    left: 0;
-                    transform: translate(0, 0);
-                }
-                &::before {
-                    animation: move 5.5s ease-in-out infinite;
-                }
-
-                &::after {
-                    animation: move 5.5s ease-in-out 1s infinite;
-                }
-            }
-        }
-
-        @keyframes jump1 {
-            0% {
-                bottom: 50px;
-            }
-            50% {
-                bottom: 60px;
-            }
-            100% {
-                bottom: 50px;
-            }
-        }
-
-        @keyframes jump2 {
-            0% {
-                bottom: 40px;
-            }
-            50% {
-                bottom: 50px;
-            }
-            100% {
-                bottom: 40px;
-            }
-        }
-
-        @keyframes move {
-            80% {
-                height: 8px;
-                bottom : -10px;
-                transform: translate(95px, 0px);
-            }
-            93% {
-                transform: translate(95px, 3px);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(95px, 15px);
-                opacity: 0;
-            }
+        .enter {
+            font-size 24px
         }
     }
 </style>

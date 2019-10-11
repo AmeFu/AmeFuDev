@@ -1,5 +1,6 @@
 ---
-tags: js, 前端
+title: ES6 生成器函数（Generator）
+tags: js, 前端, es6
 description: Generator
 ---
 

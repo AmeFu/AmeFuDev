@@ -1,10 +1,5 @@
 ---
-home: false
+home: true
 navbar: false
 sidebar: false
-pageClass: home-list
-layout: HomePage
 ---
-
-
-

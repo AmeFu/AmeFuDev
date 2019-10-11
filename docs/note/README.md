@@ -1,6 +1,9 @@
 ---
+note: true
 navbar: true
 sidebar: true
+pageClass: note-list
+layout: NoteList
 ---
 
 <div style="text-align: center">

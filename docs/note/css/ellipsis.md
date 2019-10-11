@@ -1,9 +1,10 @@
 ---
+title: 文本溢出显示省略号
 tags: css, 前端
 description: 文本溢出显示省略号的不同写法
 ---
 
-# 文本溢出显示省略号
+<!-- # 文本溢出显示省略号 -->
 
 <style>
     .ellipsis-wrap {
