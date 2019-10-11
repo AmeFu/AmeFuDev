@@ -1,8 +1,8 @@
 <template>
   <div class="theme-container" :class="pageClasses">
-    <!-- <PointBg class="pointBg" /> -->
-    <Navbar @toggle-menu="toggleMenu" />
-    <Slogan />
+    <Particle class="particle" v-if="!$page.frontmatter.home" />
+    <Navbar v-if="!$page.frontmatter.home" @toggle-menu="toggleMenu" />
+    <Slogan v-if="!$page.frontmatter.home" />
     <div class="content-wrap">
       <div class="inner-block">
         <div class="left-side">
@@ -34,10 +34,10 @@ import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
 import RouterSidebar from '@theme/components/RouterSidebar.vue'
 import Slogan from '@theme/components/Slogan.vue'
-import PointBg from '@theme/components/bg/Point.vue'
+import Particle from '@theme/components/bg/Particle.vue'
 
 export default {
-  components: { Home, Note, Page, Navbar, Footerbar, Category, Tag, RouterSidebar, Slogan, PointBg },
+  components: { Home, Note, Page, Navbar, Footerbar, Category, Tag, RouterSidebar, Slogan, Particle },
   data () {
     return {
       isMenuOpen: false
@@ -74,6 +74,14 @@ export default {
   padding-top 31px
   padding-bottom 50px
   min-height 100vh
+  .particle 
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    opacity .4
+    z-index -1
   .content-wrap
     .inner-block
       position relative

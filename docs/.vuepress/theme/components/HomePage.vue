@@ -1,5 +1,6 @@
 <template>
     <div class="fullScreen homePage">
+        <ColofulTouch class="colofulTouch" />
         <div class="enter-wrap">
             <span class="img-wrap">
                 <img src="https://unsplash.it/200/200" alt="">
@@ -16,7 +17,9 @@
 
 <script type="text/ecmascript-6">
   import axios from 'axios'
+  import ColofulTouch from '@theme/components/bg/ColorfulTouch'
   export default {
+    components: { ColofulTouch },
     data() {
       return {
         loading: true,
@@ -50,12 +53,20 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+    .colofulTouch {
+        position fixed
+        top 0
+        left 0
+        width 100%
+        height 100%
+    }
     .homePage {
         color rgba(255,255,255,0.65)
         background-color $bgDark
         background-image url("/img/star-bg.svg"),linear-gradient(#191c20, #24292e 15%)
         background-repeat repeat-x
         background-position center 0, 0 0, 0 0
+        background-size cover
     }
     *::selection {
         background #3eaf7c
@@ -112,6 +123,7 @@
                 left 0
                 top 0
                 width 100%
+                min-width 1rem
                 font-size 0.75rem
                 height 0.75rem
                 line-height 0.75rem
