@@ -44,6 +44,7 @@ export default {
   border-bottom 1px solid #eee
   padding 40px 0
   overflow hidden
+  z-index 0
   .stars {
     background radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)
   }

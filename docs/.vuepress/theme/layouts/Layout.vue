@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container" :class="pageClasses">
-    <Particle class="particle" v-if="!$page.frontmatter.home" />
+    <Caidai />
     <Navbar v-if="!$page.frontmatter.home" @toggle-menu="toggleMenu" />
     <Slogan v-if="!$page.frontmatter.home" />
     <div class="content-wrap">
@@ -16,6 +16,7 @@
         <aside class="right-side" v-if="!$page.frontmatter.home && !$page.frontmatter.intro && (Object.keys($categorys).length > 0 || Object.keys($tags).length > 0)">
           <Category v-if="Object.keys($categorys).length > 0" />
           <Tag v-if="Object.keys($tags).length > 0" />
+          <Tree />
           <RouterSidebar />
         </aside>
       </div>
@@ -34,10 +35,11 @@ import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
 import RouterSidebar from '@theme/components/RouterSidebar.vue'
 import Slogan from '@theme/components/Slogan.vue'
-import Particle from '@theme/components/bg/Particle.vue'
+import Caidai from '@theme/components/bg/Caidai.vue'
+import Tree from '@theme/components/bg/Tree.vue'
 
 export default {
-  components: { Home, Note, Page, Navbar, Footerbar, Category, Tag, RouterSidebar, Slogan, Particle },
+  components: { Home, Note, Page, Navbar, Footerbar, Category, Tag, RouterSidebar, Slogan, Caidai, Tree },
   data () {
     return {
       isMenuOpen: false
@@ -74,7 +76,7 @@ export default {
   padding-top 31px
   padding-bottom 50px
   min-height 100vh
-  .particle 
+  .particle, .MouseFollow 
     position fixed
     top 0
     left 0

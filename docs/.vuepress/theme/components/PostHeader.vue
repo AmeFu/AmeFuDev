@@ -25,7 +25,8 @@
       <span class="tags post-meta-item" v-if="post.frontmatter.tags && post.frontmatter.tags.length > 0">
         |
         标签:
-        <span class="tag-item em" v-for="item in post.frontmatter.tags">{{item}}</span>
+        <router-link class="tag-item em" v-for="item in post.frontmatter.tags" :to="{ path: '/tag/' + item }">{{item}}</router-link>
+        <!-- <span class="tag-item em" v-for="item in post.frontmatter.tags">{{item}}</span> -->
       </span>
       <!-- <span :id="post.path" class="leancloud-visitors" :data-flag-title="post.title">
         |
