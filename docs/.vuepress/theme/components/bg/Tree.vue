@@ -47,8 +47,8 @@
         /*opacity:0.9;*/
         top: 0;
         left: 100px;
-        -webkit-animation-duration: calc(inherit / 2);
-                animation-duration: calc(inherit / 2);
+        -webkit-animation-duration: calc(100% / 2);
+                animation-duration: calc(100% / 2);
         /* don't works  */
     }
     .trunk > div:nth-child(2), .trunk div > div:nth-child(2) {

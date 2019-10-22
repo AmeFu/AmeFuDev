@@ -13,12 +13,6 @@ module.exports = {
   serviceWorker: true,
   // base: '/', // 这是部署到github相关的配置 下面会讲
   markdown: {
-    config: md => {
-      md.set({ breaks: true })
-    },
-    anchor: {
-      permalinkSymbol: '■'
-    },
     lineNumbers: true // 代码块显示行号
   },
   themeConfig: {

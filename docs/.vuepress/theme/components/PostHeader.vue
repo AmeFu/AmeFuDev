@@ -7,12 +7,12 @@
         {{ post.title }}</a>
     </h2>
     <div class="post-meta">
-      <span class="author post-meta-item">
+      <!-- <span class="author post-meta-item">
         作者:
         <span class="em">{{ post.frontmatter.author || 'Ame' }}</span>
-      </span>
+      </span> -->
       <span class="time post-meta-item">
-        |
+        <!-- | -->
         时间:
         <time >{{ post.lastUpdated | toLocaleString | formatLocaleString }}</time>
       </span>
