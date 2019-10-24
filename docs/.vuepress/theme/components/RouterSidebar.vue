@@ -21,8 +21,8 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$page)
-        console.log(this.sidebarItems)
+        // console.log(this.$page)
+        // console.log(this.sidebarItems)
     }
 }
 </script>

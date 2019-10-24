@@ -4,7 +4,7 @@ module.exports = {
   base: '/',
   title: 'AME',
   description: '使用VuePress生成的个人博客',
-  port: 8080,
+  port: 8081,
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0'}],

@@ -17,7 +17,8 @@
         "children": [
           "css/ellipsis",
           "css/vertical",
-          "css/background-clip"
+          "css/background-clip",
+          "css/reflowAndRepaint"
         ]
       },
       {
@@ -28,7 +29,15 @@
           "js/window_location",
           "js/design_mode",
           "js/math_fn",
-          "js/ES6_GeneratorFunction_yeild_promise"
+          "js/ES6_GeneratorFunction_yeild_promise",
+          "js/promise"
+        ]
+      },
+      {
+        "title": "Vue",
+        "collapsable": false,
+        "children": [
+          "vue/whydataisfn"
         ]
       },
       {
