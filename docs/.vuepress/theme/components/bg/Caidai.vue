@@ -218,8 +218,8 @@
                                 this._canvas.style["outline"] = "0";
                                 this._canvas.style["left"] = "0";
                                 this._canvas.style["top"] = "0";
-                                this._canvas.style["width"] = "100%";
-                                this._canvas.style["height"] = "100%";
+                                this._canvas.style["width"] = "100vw";
+                                this._canvas.style["height"] = "100vh";
                                 this._canvas.style["z-index"] = "-1";
                                 this._canvas.style["background-color"]="#fff";
                                 this._canvas.id = "bgCanvas";	
@@ -230,7 +230,8 @@
                                 this._context.globalAlpha = this._options.colorAlpha;
 
                                 window.addEventListener("resize", this._onResize);
-                                window.addEventListener("scroll", this._onScroll);
+                                // 取消滚动事件
+                                // window.addEventListener("scroll", this._onScroll);
                                 document.body.appendChild(this._canvas);
                             }
                             catch (e) {
